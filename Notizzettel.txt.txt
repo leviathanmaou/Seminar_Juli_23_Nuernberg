@@ -9,3 +9,66 @@ https://github.com/pelocpp
 a) VS Studio
 
 b) Github
+
+=====================================================
+
+Übungen: Ab groob 15.30  
+
+=====================================================
+
+Überblick
+---------
+
+Performance // Echtzeit  // "Statisch vs. Dynamisch"
+
+CRTP
+
+Smart Pointer
+
+Multithreading
+
+Templates
+
+Funktoren
+
+Lambdas
+
+emplace
+
+=====================================================
+
+Move-Semantik:
+
+:==:  ...F80  // temp. Objekt // wird freigegeben
+:==:  ...1B0  // wird später freigegeben
+
+versus
+
+:==:  ...0D0  // 
+
+
+:==:  ...EA0
+
+
+==========================================
+
+Verwenden Sie Container der STL.
+
+Dyn. Speicherverwaltung:   reserve: Initialer Speicher
+
+===========================================
+
+LittleData
+BigData:   BigData => Typkonvertierungs-Operator: LittleData
+
+operator LittleData
+
+===========================================
+
+Normale Funktionen
+
+Template Funktionen
+
+Generische Funktionen
+
+

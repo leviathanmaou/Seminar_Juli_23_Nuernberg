@@ -20,10 +20,10 @@ namespace MoveSemantics {
         ~BigData();
 
         // copy semantics
-        BigData(const BigData&); // copy c'tor
-        BigData& operator= (const BigData&);  // copy assignment
+        //BigData(const BigData&); // copy c'tor
+        //BigData& operator= (const BigData&);  // copy assignment
 
-        // move semantics
+        //// move semantics
         //BigData(BigData&&) noexcept;  // move c'tor
         //BigData& operator= (BigData&&) noexcept; // move assignment
 
@@ -63,38 +63,38 @@ namespace MoveSemantics {
     }
 
     // copy semantics
-    BigData::BigData(const BigData& data) {
+    //BigData::BigData(const BigData& data) {
 
-        // allocate buffer
-        m_size = data.m_size;
-        m_data = new int[m_size];
+    //    // allocate buffer
+    //    m_size = data.m_size;
+    //    m_data = new int[m_size];
 
-        // copy object
-        std::copy(data.m_data, data.m_data + m_size, m_data);
-    }
+    //    // copy object
+    //    std::copy(data.m_data, data.m_data + m_size, m_data);
+    //}
 
-    BigData& BigData::operator= (const BigData& data) {
+    //BigData& BigData::operator= (const BigData& data) {
 
-        // prevent self-assignment
-        if (this == &data)
-            return *this;
+    //    // prevent self-assignment
+    //    if (this == &data)
+    //        return *this;
 
-        // delete old buffer
-        delete[] m_data;
+    //    // delete old buffer
+    //    delete[] m_data;
 
-        // allocate a new buffer
-        m_size = data.m_size;
-        m_data = new int[m_size];
+    //    // allocate a new buffer
+    //    m_size = data.m_size;
+    //    m_data = new int[m_size];
 
-        // copy buffer
-        std::copy(data.m_data, data.m_data + m_size, m_data);
+    //    // copy buffer
+    //    std::copy(data.m_data, data.m_data + m_size, m_data);
 
-        return *this;
-    }
+    //    return *this;
+    //}
 
     // -------------------------------------------------------------------
 
-    // move semantics
+    //// move semantics
     //BigData::BigData(BigData&& data) noexcept {  // move c'tor
 
     //    m_data = data.m_data;   // shallow copy
@@ -239,10 +239,10 @@ namespace MoveSemantics {
 void main_move_semantics()
 {
     using namespace MoveSemantics;
-    test_01_move_semantics();
+    //test_01_move_semantics();
     test_02_demonstrate_move_ctor();
-    test_03_demonstrate_move_assignment();
-    test_04_demonstrate_move_assignment();
+    //test_03_demonstrate_move_assignment();
+    //test_04_demonstrate_move_assignment();
 }
 
 // =====================================================================================
