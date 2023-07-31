@@ -1,0 +1,11 @@
+Modern C++
+
+Peter Loos
+
+Guten Morgen :)
+
+https://github.com/pelocpp
+
+a) VS Studio
+
+b) Github
