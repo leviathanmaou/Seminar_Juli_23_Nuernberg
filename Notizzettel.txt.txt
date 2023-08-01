@@ -72,3 +72,6 @@ Template Funktionen
 Generische Funktionen
 
 
+shared_ptr (stack) points to control block on the heap. control block (heap) points to data on the heap
+
+even just having shared_ptr passed as parameter (so by-value), it does increase the use counter [FOR PASS BY-REFERENCE IT DOES NOT INCREASE THE USE-COUNTER]
