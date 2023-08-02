@@ -6,8 +6,17 @@ module modern_cpp:variadic_templates;
 
 namespace VariadicTemplatesSeminar {
 
-    void printer(int n) {
+    template<typename T>
+    void printer(T n) {
         std::cout << n << ' ';
+    }
+
+    // mehrere ===> Pack
+
+    template<typename T, typename ... U>
+    void printer(T n, U ... m) {         // U ... m           ==> "einpacken" von 2, 3, 4, 5
+        std::cout << n << ' ';
+        printer<U ...>(m ...);           // m ... und U ...   ==> "auspacken"
     }
 
     void test_seminar() {
@@ -18,7 +27,7 @@ namespace VariadicTemplatesSeminar {
         // Will make template for this function
         //printer(1, 123.345, "fsdfsd", std::string{"sdf"});
 
-        printer(1);
+        printer(1, 2, 3, 4, 5); // 5 Args
 
     }
 
