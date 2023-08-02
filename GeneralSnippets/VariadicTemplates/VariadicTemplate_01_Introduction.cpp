@@ -4,6 +4,26 @@
 
 module modern_cpp:variadic_templates;
 
+namespace VariadicTemplatesSeminar {
+
+    void printer(int n) {
+        std::cout << n << ' ';
+    }
+
+    void test_seminar() {
+
+        // Not typesafe
+        //printf("%s", 1, 123.345, "fsdfsd", std::string{"sdf"});
+
+        // Will make template for this function
+        //printer(1, 123.345, "fsdfsd", std::string{"sdf"});
+
+        printer(1);
+
+    }
+
+}
+
 namespace VariadicTemplatesIntro_01 {
 
     // ====================================================================
@@ -293,6 +313,9 @@ namespace VariadicTemplatesIntro_05 {
 
 void main_variadic_templates_introduction()
 {
+    using namespace VariadicTemplatesSeminar;
+    test_seminar();
+
     using namespace VariadicTemplatesIntro_01;
     test_printer_01();
 

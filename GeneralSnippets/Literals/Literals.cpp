@@ -151,7 +151,11 @@ namespace Literals_Color_CompileTime {
     }
 
     // literal operator ("cooked" version)
-    constexpr Color operator"" _rgb(unsigned long long int value) {
+    constexpr Color operator"" _rgb(const unsigned long long int value) {
+
+        //constexpr bool test = (value > 0xFFFFFF);
+
+        //static_assert (test, "literal too large");
 
         if (value > 0xFFFFFF) {
             throw std::logic_error("literal too large");
