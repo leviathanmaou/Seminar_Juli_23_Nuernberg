@@ -25,7 +25,7 @@ namespace VariadicTemplatesSeminar {
         //printf("%s", 1, 123.345, "fsdfsd", std::string{"sdf"});
 
         // Will make template for this function
-        //printer(1, 123.345, "fsdfsd", std::string{"sdf"});
+        printer(1, 123.345, "fsdfsd", std::string{"sdf"});
 
         printer(1, 2, 3, 4, 5); // 5 Args
 

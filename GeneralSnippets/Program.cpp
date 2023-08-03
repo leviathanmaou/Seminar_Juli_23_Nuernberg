@@ -41,7 +41,7 @@ int main()
         //main_decltype();
         //main_default_initialization();
         //main_erase_remove_idiom();
-        //main_exercises();
+        main_exercises();
         //main_expression_templates();
         //main_generate();
         //main_generic_lambdas();
@@ -91,7 +91,7 @@ int main()
         //main_type_traits();
         //main_uniform_initialization();
         //main_unique_ptr();
-        main_variadic_templates_introduction();
+        //main_variadic_templates_introduction();
         //main_variadic_templates_working_on_every_argument();
         //main_variadic_templates_sum_of_sums();
         //main_variadic_templates_mixins();

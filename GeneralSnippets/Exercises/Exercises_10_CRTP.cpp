@@ -11,8 +11,8 @@ namespace Exercises_CRTP {
         using Clock = std::chrono::high_resolution_clock;
         constexpr long MaxIterations = 10000;
         constexpr bool Verbose = false;
-        constexpr int Width = 400;
-        constexpr int Height = 400;
+        constexpr int Width = 400000;
+        constexpr int Height = 4;
 
         // classical approach: base class for image types
         class Image {
@@ -26,21 +26,7 @@ namespace Exercises_CRTP {
 
         public:
             // public interface
-            virtual void draw() = 0;
-            virtual void drawPixel(int position) = 0;
-            virtual long getNumPixels() = 0;
-        };
-
-        class PngImage : public Image {
-        private:
-            long m_numPixels;
-            long m_currPixel;
-
-        public:
-            PngImage() : Image{ 0, 0 }, m_currPixel(0) { setNumPixels(); }
-            PngImage(int width, int height) : Image{ width, height } { setNumPixels(); }
-
-            virtual void draw() override {
+            virtual void draw() {
                 // just to prevent optimizer to optimize "too much" some sloppy stuff
                 m_currPixel = 0;
                 int numPixels = getNumPixels();
@@ -51,6 +37,18 @@ namespace Exercises_CRTP {
                     currPosition = getCurrPixel();
                 }
             }
+            virtual void drawPixel(int position) = 0;
+            virtual long getNumPixels() = 0;
+        };
+
+        class PngImage : public Image {
+        private:
+            long m_numPixels;
+            long m_currPixel;
+
+        public:
+            PngImage() : Image{ 1, 1 }, m_currPixel(0) { setNumPixels(); }
+            PngImage(int width, int height) : Image{ width, height } { setNumPixels(); }
 
             virtual void drawPixel(int position) override {
                 if (Verbose) {
